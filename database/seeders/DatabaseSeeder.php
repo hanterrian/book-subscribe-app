@@ -16,13 +16,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $adminRole = Role::create(['name' => 'Admin']);
-        $userRole = Role::create(['name' => 'User']);
+        $adminRole = Role::create(['name' => 'admin']);
+        $userRole = Role::create(['name' => 'user']);
 
         $admin = User::create([
             'name' => 'Admin',
             'email' => 'admin@localhost.loc',
             'password' => \Hash::make('password'),
         ]);
+
+        $user = User::create([
+            'name' => 'User',
+            'email' => 'user@localhost.loc',
+            'password' => \Hash::make('password'),
+        ]);
+
+        $admin->assignRole($adminRole);
+        $user->assignRole($userRole);
     }
 }
