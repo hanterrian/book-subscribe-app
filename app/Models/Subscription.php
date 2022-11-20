@@ -20,8 +20,8 @@ use Laravel\Cashier\Subscription as CashierSubscription;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\SubscriptionItem[] $items
  * @property-read int|null $items_count
- * @property-read \App\Models\User|null $owner
- * @property-read \App\Models\User|null $user
+ * @property-read \App\Models\User $owner
+ * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|Subscription active()
  * @method static \Illuminate\Database\Eloquent\Builder|Subscription canceled()
  * @method static \Illuminate\Database\Eloquent\Builder|Subscription ended()
