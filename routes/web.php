@@ -19,12 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'auth'], function () {
-    Route::get('login', [LoginController::class, 'index'])->name('login');
-    Route::post('login', [LoginController::class, 'singIn'])->name('login.sing-in');
-
-    Route::get('register', [RegisterController::class, 'index'])->name('register');
-    Route::post('register', [RegisterController::class, 'register'])->name('register.complete');
-});
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::get('register', [RegisterController::class, 'index'])->name('register');
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('logout', [ProfileController::class, 'logout'])->name('logout');

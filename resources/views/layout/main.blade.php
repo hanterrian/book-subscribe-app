@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Books - @yield('title')</title>
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 <body>
+<x-layout.header/>
+
 <div class="container">
     @yield('content')
 </div>
 
+<x-layout.footer/>
+
 @vite('resources/js/app.js')
+@livewireScripts
 </body>
 </html>
